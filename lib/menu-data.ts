@@ -43,7 +43,7 @@ export const menuItems: MenuItem[] = [
     name: 'Insalata Caprese',
     description:
       'Frischer Mozzarella mit reifen Tomaten, Basilikum und nativem Olivenöl extra — simpel, frisch und unwiderstehlich.',
-    image: '/menu/wrap.png',
+    image: '/menu/a1.png',
     category: 'Antipasti',
     tags: ['Vegetarisch', 'Frisch'],
   },
@@ -72,7 +72,7 @@ export const menuItems: MenuItem[] = [
     name: 'Pizza Funghi',
     description:
       'Herzhafte Pizza mit Tomatensauce, Mozzarella und frischen Champignons — ein aromatischer Klassiker.',
-    image: '/menu/mixed-grill.png',
+    image: '/menu/a2.png',
     category: 'Pizza',
     tags: ['Vegetarisch'],
   },
