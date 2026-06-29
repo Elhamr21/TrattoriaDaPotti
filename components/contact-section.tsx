@@ -93,63 +93,119 @@ export function ContactSection() {
             </div>
           </Reveal>
 
-          {/* Form */}
-          <Reveal delay={0.1}>
-            <form
-              onSubmit={handleSubmit}
-              className="flex h-full flex-col gap-4 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8"
-            >
-              <h3 className="font-heading text-2xl font-bold">Nachricht senden</h3>
-              <p className="-mt-2 text-sm text-muted-foreground">
-                Reservierungen, Anfragen oder einfach Hallo sagen — wir
-                antworten meist innerhalb eines Tages.
-              </p>
+          {/* Reservation Form */}
+<Reveal delay={0.1}>
+  <form
+    onSubmit={handleSubmit}
+    className="flex h-full flex-col gap-4 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8"
+  >
+    <h3 className="font-heading text-2xl font-bold">
+      Tisch reservieren
+    </h3>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                <Field label="Name" id="name" placeholder="Ihr Name" />
-                <Field
-                  label="Telefon"
-                  id="phone"
-                  type="tel"
-                  placeholder="Telefonnummer"
-                />
-              </div>
-              <Field
-                label="E-Mail"
-                id="email"
-                type="email"
-                placeholder="sie@email.de"
-              />
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="message" className="text-sm font-medium">
-                  Nachricht
-                </label>
-                <textarea
-                  id="message"
-                  required
-                  rows={4}
-                  placeholder="Wie können wir helfen?"
-                  className="resize-none rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-ring focus:ring-3 focus:ring-ring/30"
-                />
-              </div>
+    <p className="-mt-2 text-sm text-muted-foreground">
+      Reservieren Sie Ihren Tisch bequem online. Wir bestätigen Ihre
+      Reservierung schnellstmöglich.
+    </p>
 
-              <Button
-                type="submit"
-                disabled={sent}
-                className="mt-auto h-12 gap-2 rounded-full bg-primary text-base font-semibold text-primary-foreground hover:bg-primary/90"
-              >
-                {sent ? (
-                  <>
-                    <Check className="size-4" /> Nachricht gesendet
-                  </>
-                ) : (
-                  <>
-                    <Send className="size-4" /> Nachricht senden
-                  </>
-                )}
-              </Button>
-            </form>
-          </Reveal>
+    <Field
+      label="Name *"
+      id="name"
+      placeholder="Ihr vollständiger Name"
+      required
+    />
+
+    <Field
+      label="E-Mail *"
+      id="email"
+      type="email"
+      placeholder="Ihre E-Mail-Adresse"
+      required
+    />
+
+    <Field
+      label="Telefonnummer *"
+      id="phone"
+      type="tel"
+      placeholder="Ihre Telefonnummer"
+      required
+    />
+
+    <div className="grid gap-4 sm:grid-cols-3">
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="guests" className="text-sm font-medium">
+          Anzahl Personen *
+        </label>
+        <select
+          id="guests"
+          required
+          className="h-12 rounded-xl border border-input bg-background px-4 text-sm outline-none transition-colors focus:border-ring focus:ring-3 focus:ring-ring/30"
+        >
+          <option value="">Anzahl Personen</option>
+          {Array.from({ length: 12 }, (_, i) => (
+            <option key={i + 1} value={i + 1}>
+              {i + 1} {i === 0 ? "Person" : "Personen"}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="date" className="text-sm font-medium">
+          Datum *
+        </label>
+        <input
+          id="date"
+          type="date"
+          required
+          className="h-12 rounded-xl border border-input bg-background px-4 text-sm outline-none transition-colors focus:border-ring focus:ring-3 focus:ring-ring/30"
+        />
+      </div>
+
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="time" className="text-sm font-medium">
+          Uhrzeit *
+        </label>
+        <input
+          id="time"
+          type="time"
+          required
+          className="h-12 rounded-xl border border-input bg-background px-4 text-sm outline-none transition-colors focus:border-ring focus:ring-3 focus:ring-ring/30"
+        />
+      </div>
+    </div>
+
+    <div className="flex flex-col gap-1.5">
+      <label htmlFor="message" className="text-sm font-medium">
+        Nachricht (optional)
+      </label>
+      <textarea
+        id="message"
+        rows={4}
+        placeholder="Besondere Wünsche, Allergien, Anlass..."
+        className="resize-none rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-ring focus:ring-3 focus:ring-ring/30"
+      />
+    </div>
+
+    <Button
+      type="submit"
+      disabled={sent}
+      className="mt-auto h-12 rounded-full bg-primary text-base font-semibold text-primary-foreground hover:bg-primary/90"
+    >
+      {sent ? (
+        <>
+          <Check className="mr-2 size-4" />
+          Reservierung gesendet
+        </>
+      ) : (
+        <>
+          <Send className="mr-2 size-4" />
+          Tisch reservieren
+        </>
+      )}
+    </Button>
+  </form>
+</Reveal>
         </div>
       </div>
     </section>
