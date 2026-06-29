@@ -8,15 +8,15 @@ import { SectionHeading } from '@/components/section-heading'
 import { cn } from '@/lib/utils'
 
 const gallery = [
-  { src: '/menu/mixed-grill.png', alt: 'Tagliatelle mit Lachs und Gemüse', span: 'row' },
+  { src: '/menu/a1.png', alt: 'Tagliatelle mit Lachs und Gemüse', span: 'row' },
   { src: '/gallery/platter-two.png', alt: 'Antipasto-Platte mit Aufschnitt und Oliven' },
-  { src: '/ambient/storefront.png', alt: 'Trattoria Da Potti von außen' },
+  { src: '/ambient/ambient3.png', alt: 'Trattoria Da Potti von außen' },
   { src: '/menu/pizza.png', alt: 'Frisch gebackene Pizza Margherita' },
-  { src: '/gallery/wrap-counter.png', alt: 'Unser freundliches Team beim Servieren', span: 'col' },
+  { src: '/menu/a2.png', alt: 'Unser freundliches Team beim Servieren', span: 'col' },
   { src: '/menu/burek.png', alt: 'Hausgemachtes Focaccia-Brot' },
-  { src: '/ambient/interior.png', alt: 'Einladender Innenraum der Trattoria' },
+  { src: '/ambient/ambient2.png', alt: 'Einladender Innenraum der Trattoria' },
   { src: '/menu/tres-leches.png', alt: 'Hausgemachtes Tiramisù' },
-  { src: '/ambient/counter.png', alt: 'Idyllischer Außenbereich im Sommer' },
+  { src: '/ambient/ambient1.png', alt: 'Idyllischer Außenbereich im Sommer' },
 ]
 
 export function GallerySection() {
