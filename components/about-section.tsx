@@ -31,7 +31,7 @@ export function AboutSection() {
         <Reveal className="relative">
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-xl">
             <Image
-              src="/ambient/storefront.png"
+              src="/ambient/ambient3.png"
               alt="Das Restaurant Trattoria Da Potti von außen"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -47,7 +47,7 @@ export function AboutSection() {
           >
             <div className="relative aspect-square">
               <Image
-                src="/ambient/interior.png"
+                src="/ambient/ambient2.png"
                 alt="Innenraum der Trattoria Da Potti"
                 fill
                 sizes="224px"
